@@ -1,0 +1,15 @@
+#! /bin/sh
+
+sxhkd &
+polybar &
+xrandr --output HDMI-A-0 --mode 1920x1080 --set TearFree on 
+
+bspc monitor -d "[Browser]" "[Terminal]" "[IDE]" "[Media]" "[Tools]"
+
+bspc config border_width         0
+bspc config window_gap           0
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
