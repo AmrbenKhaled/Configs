@@ -15,16 +15,23 @@ super + b
 
 ### Script-Setup ###
 
+# power of computer
+super + shift + BackSpace
+	sh ~/scripts/exit.sh
+
 # take screen shots
 super + p
 	maim -s -m 1 ~/Media/screenshots/$(date +%s).png
 
 # change volume
-super + {period,comma}
-	pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
+super + period
+	amixer set Master 5%+  
+
+super + comma
+	amixer set Master 5%-
 
 super + m
-	pactl set-sink-mute @DEFAULT_SINK@ {true,false}
+	amixer set Master {mute,unmute}
 
 ### Window-Setup ###
 
