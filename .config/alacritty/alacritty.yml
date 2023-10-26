@@ -1,13 +1,23 @@
+windows:
+  opacity : 85.0
 
 font:
   normal:
-    family: "JetBrainsMono Nerd Font"
-  size: 15.0
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  size: 18.0
 
 # Colors (One Dark)
 colors:
   # Default colors
   primary:
+    #background: '0x282C34'
     background: '0x000000'
     foreground: '0xabb2bf'
 
