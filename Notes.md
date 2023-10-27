@@ -1,0 +1,6 @@
+
+sudo pacman -S xorg vim git make unzip curl htop mpv sxiv wget bluez bluez-tools alsa-utils pipewire mypaint gcc nnn exa feh xinit firefox-esr i3 tmux alacritty lxapperance xserver-xorg-video-all build-essential   
+## Build from source
+neovim
+VS code
+demnu
