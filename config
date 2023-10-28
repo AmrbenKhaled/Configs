@@ -1,90 +1,18 @@
-# font
-font pango:JetBrainsMono Nerd Font 15px
 
-# mode key
-set $mod Mod4
-
-# open programs
-bindsym $mod+Return exec alacritty -e tmux
-
-bindsym $mod+b exec firefox
-
-bindsym $mod+c exec code
-
-bindsym $mod+d exec dmenu_run
-
-# auto start
-exec --no-startup-id feh --bg-fill --randomize ~/.config/backgrounds
-exec --no-startup-id systemctl --user enable pipewire
-exec --no-startup-id systemctl --user start pipewire
-
-# set border
-default_border pixel 0
-default_floating_border pixel 0
-
-# audio
-bindsym $mod+period exec amixer set Master 5%+
-bindsym $mod+comma exec amixer set Master 5%-
-bindsym $mod+m exec amixer set Master toggle
-
-# scripts
-bindsym $mod+s exec ./.scripts/power.sh
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# kill window
-bindsym $mod+w kill
-
-# toggle tiling / floating
-bindsym $mod+Shift+f floating toggle
-
-# # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-
-# reload i3
-bindsym $mod+Shift+r restart
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-
-        bindsym h resize grow width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize shrink width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+general {
+        colors = true
+        interval = 5
 }
 
-bindsym $mod+r mode "resize"
+order += "volume master"
+order += "tztime local"
 
-bar {
-        status_command i3status
-	separator_symbol " "
+tztime local {
+        format = "%A, %d %B %Y  |  %r "
 }
 
+volume master {
+        format = "%volume  |"
+        format_muted = "Muted  |"
+        device = "default"
+}
